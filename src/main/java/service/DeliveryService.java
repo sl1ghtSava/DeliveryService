@@ -80,4 +80,14 @@ public class DeliveryService {
 
         return false;
     }
+
+    public String processDelivery(String orderId, String status) {
+        if (status == null || status.isEmpty()) {
+            return "Invalid status";
+        }
+        if ("DELIVERED".equalsIgnoreCase(status)) {
+            return "Order " + orderId + " successfully delivered";
+        }
+        return "Order " + orderId + " status: " + status;
+    }
 }

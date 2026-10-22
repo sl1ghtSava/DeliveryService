@@ -5,10 +5,9 @@ import model.DeliveryStatus;
 import repository.DeliveryRepository;
 import repository.InMemoryDeliveryRepository;
 import service.DeliveryService;
+import org.junit.jupiter.api.Test;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -93,5 +92,14 @@ public class DeliveryServiceTest {
                 assertThrows(
                                 UnsupportedOperationException.class,
                                 () -> history.add("попытка изменить"));
+        }
+
+        @Test
+        public void testProcessDelivery() {
+                InMemoryDeliveryRepository repository = new InMemoryDeliveryRepository();
+                DeliveryService service = new DeliveryService(repository);
+
+                String result = service.processDelivery("ORD-001", "DELIVERED");
+                assertEquals("Order ORD-001 successfully delivered", result);
         }
 }

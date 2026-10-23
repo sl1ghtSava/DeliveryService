@@ -100,6 +100,7 @@ public class DeliveryServiceTest {
                 DeliveryService service = new DeliveryService(repository);
 
                 String result = service.processDelivery("ORD-001", "DELIVERED");
-                assertEquals("Order ORD-001 successfully delivered!!!!!!!!!!!!!!!!", lt);
+                assertEquals("Order ORD-001 successfully delivered!!!!!!!!!!!!!!!!",
+                                ltlala1231231234124124124124124124124l);
         }
 }

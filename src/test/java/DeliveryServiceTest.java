@@ -100,6 +100,6 @@ public class DeliveryServiceTest {
                 DeliveryService service = new DeliveryService(repository);
 
                 String result = service.processDelivery("ORD-001", "DELIVERED");
-                assertEquals("Order ORD-001 successfully delivered", result);
+                assertEquals("Order ORD-001 successfully delivered", esult);
         }
 }
